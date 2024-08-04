@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="baap" style="
+    margin-right: 0px;
+"><h3>............ .............</h3>
+</div>
+<div class="beta">
+    <div class="result-header" style="align-items: left; text-align: left;">
+        <h1 style = "margin-right: 0px;padding-right: 0px;border-right-width: 100px;padding-left: 50px;margin-left: 50px;margin-top: 15.44;margin-bottom: 30px;padding-bottom: 20‒;margin-top: 0px;">
+            Prediction Results for CCS Value <span id="result-css">{{ css }}</span> kg/pellet
+        </h1>
+    </div>
+    <div class="container">
+        <div class="card" style="padding-left: 45px">
+            <h3>Machine Parameters</h3>
+            <p><strong>I/M Speed:</strong> <span id="result-im_speed">{{ im_speed }}</span> m/min</p>
+            <p><strong>Total Bed Height:</strong> <span id="result-total_bed_height">{{ total_bed_height }}</span> mm</p>
+        </div>
+        <div class="card" style="padding-left: 0px; padding-right: 0px;">
+            <h3>Raw Material Consumption</h3>
+            <p><strong>Coal:</strong> <span id="result-coal">{{ coal }}</span> KG/T</p>
+            <p><strong>Bentonite:</strong> <span id="result-bentonite">{{ bentonite }}</span> KG/T</p>
+            <p><strong>Furnace Oil:</strong> <span id="result-furnance_oil">{{ furnance_oil }}</span> LITR/T</p>
+            <p><strong>Lime + Coal:</strong> <span id="result-lime_coal">{{ lime_coal }}</span> %</p>
+            <p><strong>Lime: </strong><span id="result-lime"> </span> KG/T </p>
+        </div>
+        <script>
+            // Get values from the template variables
+            const coal = parseFloat("{{ coal }}");
+            const lime_coal = parseFloat("{{ lime_coal }}");
+    
+            // Perform the calculation
+            const lime = lime_coal * 10 - coal;
+    
+            // Update the span with the result
+            document.getElementById('result-lime').innerText = lime.toFixed(2);
+        </script>
+        <div class="card">
+            <h3>Indurating Parameters</h3>
+            <p><strong>T1:</strong> <span id="result-t1">{{ t1 }}</span> °C</p>
+            <p><strong>T2:</strong> <span id="result-t2">{{ t2 }}</span> °C</p>
+            <p><strong>T3:</strong> <span id="result-t3">{{ t3 }}</span> °C</p>
+            <p><strong>T4:</strong> <span id="result-t4">{{ t4 }}</span> °C</p>
+            <p><strong>T5:</strong> <span id="result-t5">{{ t5 }}</span> °C</p>
+            <p><strong>T6:</strong> <span id="result-t6">{{ t6 }}</span> °C</p>
+            <p><strong>T7:</strong> <span id="result-t7">{{ t7 }}</span> °C</p>
+            <p><strong>T8:</strong> <span id="result-t8">{{ t8 }}</span> °C</p>
+        </div>
+        <div class="card" style="
+        padding-top: 60px;
+        padding-bottom: 100px;
+        padding-left: 25px;
+        padding-right: 25px;
+    ">
+    <h3>Additional Parameters</h3>
+    <p style="margin-bottom: 20px;"><strong>Production Quantity:</strong> <span id="result-prod_qty">{{ prod_qty }}</span> MT</p>
+    <p style="margin-bottom: 20px;"><strong>Tumble Index:</strong> <span id="result-tumble_index">{{ tumble_index }}</span> %</p>
+    <p style="margin-bottom: 20px;"><strong>Abrasion Index:</strong> <span id="result-abrasion_index">{{ abrasion_index }}</span> %</p>
+    <p style="margin-bottom: 20px;"><strong>Mean Diameter:</strong> <span id="result-mean_dia">{{ mean_dia }}</span> mm</p>
+    <p style="margin-bottom: 20px;"><strong>Pellet Porosity:</strong> <span id="result-porosity_pellet">{{ porosity_pellet }}</span> %</p>
+    <p style="margin-bottom: 20px;"><strong>Iron Ore Fe:</strong> <span id="result-input_fe">{{ input_fe }}</span> %</p>
+    <p><strong>Pellet Fe:</strong> <span id="result-output_fe">{{ output_fe }}</span> %</p>
+</div>
+
+    </div>
+    <!-- <a href="/" class="btn btn-primary">Go Back</a> -->
+</div>
+</body>
+</html>
