@@ -22,6 +22,7 @@ This project focuses on analyzing pellet properties to identify and address fact
 - Scikit-Learn
 - PyMongo
 - SQL
+- MS Excel
 
 ## Installation
 1. **Clone the repository**:
