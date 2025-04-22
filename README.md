@@ -73,6 +73,6 @@ sh
    - The results and user data are stored in a MongoDB database.
 
 ##  Project Outcomes
-Enabled root cause identification for weak pellet batches.
-Provided a scalable system for ongoing quality monitoring.
-Built confidence in data-driven decision-making for process control.
+- Enabled root cause identification for weak pellet batches.
+- Provided a scalable system for ongoing quality monitoring.
+- Built confidence in data-driven decision-making for process control.
