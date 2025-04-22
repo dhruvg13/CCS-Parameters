@@ -21,7 +21,7 @@ This project focuses on analyzing pellet properties to identify and address fact
 - NumPy
 - Scikit-Learn
 - PyMongo
-- MongoDB
+- SQL
 
 ## Installation
 1. **Clone the repository**:
